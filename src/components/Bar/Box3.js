@@ -2,13 +2,15 @@ import React from 'react'
 
 function Box3 (props) {
     const {data, footer} = props;
+    const baseURL = 'http://NavBuild-env.jc2sppyffu.us-east-1.elasticbeanstalk.com/';
+
     var box3= [];
     
     for (let i = 0; i < data.length; i++) {
         if (data[i].main === true) {
             box3.push(
                 <li 
-                    className={'main'}
+                    className={'main navigation-ul'}
                     key={i}
                 >
                     {data[i].title}
@@ -17,7 +19,7 @@ function Box3 (props) {
         } else {
             box3.push(
                 <li 
-                    className={'sub'}
+                    className={'sub navigation-li'}
                     key={i}
                 >
                     {data[i].title}
@@ -27,17 +29,17 @@ function Box3 (props) {
     }
     box3.push(
         <div 
-            className={'headerRow'}
+            className={'navigation-headerRow'}
             key={data.length}
         >
-            <p className={'main'}>{footer} 
-                <span>{'\u2b95'}</span>
+            <p className={'navigation-main'}>{footer} 
+                <span><img src={`${baseURL}rightArrow.png`}/></span>
             </p>
         </div>
     )
     return (
         
-<div className={'box3'}>
+<div className={'navigation-box3'}>
 <ul>
     {box3}
 </ul>  

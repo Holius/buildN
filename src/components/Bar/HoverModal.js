@@ -21,7 +21,7 @@ class HoverModal extends Component {
         const {data, onOutsideHoverModal, onInsideHoverModal} = this.props;
     return (
         <div 
-            className={'extendBox'}
+            className={'navigation-extendBox'}
             onMouseLeave={onOutsideHoverModal}
             onMouseEnter={onInsideHoverModal}
         > 

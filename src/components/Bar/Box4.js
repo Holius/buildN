@@ -6,14 +6,14 @@ function Box4 (props) {
 
     return (
         
-<div className={'box4'}>
-<figure className={'modalFigure'}>
+<div className={'navigation-box4'}>
+<figure className={'navigation-modalFigure'}>
     <img 
         src={`${baseURL}${props.data}`}
-        className={'modalImage'}
+        className={'navigation-modalImage'}
     />
     <figcaption>Professor's Picks <br/> 
-        <span className={'profPick'}>{props.caption}</span>
+        <span className={'navigation-profPick'}>{props.caption}</span>
     </figcaption>
 </figure>  
 </div>

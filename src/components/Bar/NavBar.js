@@ -10,7 +10,7 @@ function NavBar (props) {
             <li 
                 onMouseEnter={onSelect.bind(null,index)}
                 key={i}
-
+                className='navigation-li'
             >
                 {tabHeading[i]}
             </li>
@@ -21,7 +21,7 @@ function NavBar (props) {
             onMouseEnter={onInsideNavBar} 
             onMouseLeave={onOutsideNavBar}
         >
-            <ul className='NavBar'>
+            <ul className='navigation-navBar navigation-ul'>
                 {display}
             </ul>
         </div>

@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 
-import {Link} from 'react-router-dom';
-
 
 class SearchModal extends Component {
     constructor(props) {
@@ -16,30 +14,29 @@ class SearchModal extends Component {
         } 
         else if (!query.length) {
             return (
-                <ul className='searchBox' >
+                <ul className='navigation-searchBox navigation-ul' >
                     <p>Popular Right Now</p> 
                     {popular.map( (x,i) => 
                         <li 
                             onClick={onHoverSubmit.bind(null, event, x.listing_id, x.title)}
                             key={i}
+                            className='navigation-li'
                         >
-                        <Link to={`/${x.listing_id}`}>
                             {x.title}
-                        </Link>
                         </li>)}
                 </ul>
             )
         } else if (!current.length) {
             return (
-                <ul className='searchBox'>
-                    <li>find shop names containing '{query}'</li>
+                <ul className='navigation-searchBox'>
+                    <li className='navigation-li'>find shop names containing '{query}'</li>
                 </ul>
             )
         }
         else {
         return (
-            <ul className='searchBox'>
-                {current.map( x => <li onClick={onHoverSubmit.bind(null, event, x.listing_id, x.title)}>{x.title}</li>)}
+            <ul className='navigation-searchBox'>
+                {current.map( x => <li className='navigation-li' onClick={onHoverSubmit.bind(null, event, x.listing_id, x.title)}>{x.title}</li>)}
             </ul>
         )
         }

@@ -9,7 +9,7 @@ function Box2 (props) {
         if (data[i].main === true) {
             box2.push(
                 <li 
-                    className={'main'}
+                    className={'navigation-main navigation-li'}
                     key={i}
                 >
                     {data[i].title}
@@ -18,7 +18,7 @@ function Box2 (props) {
         } else {
             box2.push(
                 <li 
-                    className={'sub'}
+                    className={'navigation-sub navigation-li'}
                     key={i}    
                 >
                     {data[i].title}
@@ -28,8 +28,8 @@ function Box2 (props) {
     }
 
     return (
-        <div className={'box2'}>
-            <ul>
+        <div className={'navigation-box2'}>
+            <ul className='navigation-ul'>
                 {box2}
             </ul>  
         </div>

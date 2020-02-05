@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import SearchModal from './SearchModal';
 import axios from 'axios';
 
-import {BrowserRouter as Router, Link} from 'react-router-dom';
+
 
 const baseURL = 'http://NavBuild-env.jc2sppyffu.us-east-1.elasticbeanstalk.com/';
 
@@ -142,39 +142,37 @@ class Search extends Component {
       
       render() {
           return (
-            <Router>
+           
                 <header 
                   ref={this.myRef}
-                  className={'SearchBarFull'}
+                  className={'navigation-searchBarFull'}
                   > 
                   
-                  <div className={'searchBarButton'}>
-                    <h2 className={'websiteLogo'}>Hogwartsey</h2>
-                    <div className={'searchBoth'}>
+                  <div className={'navigation-searchBarButton'}>
+                    <h2 className={'navigation-websiteLogo'}>Hogwartsey</h2>
+                    <div className={'navigation-searchBoth'}>
                     <input 
-                      className={'searchBar'}
+                      className={'navigation-searchBar'}
                       type='text' 
                       value={this.state.query}
                       placeholder='Search for items or shops'
                       onChange={this.onSearchChange.bind(this)}
                       onClick={this.handleClick.bind(this)}
                     />
-                    <Link to={`/${this.state.query}`}>
                       <input
                         type='image'
-                        className={'searchButton'}
+                        className={'navigation-searchButton'}
                         src={`${baseURL}mg.png`}
                         onClick={this.onSubmit.bind(this, event)}
                       >
                         </input>
-                    </Link>
                    </div> 
-                    <h4 className={'signIn'}>Sign in</h4>
+                    <h4 className={'navigation-signIn'}>Sign in</h4>
                     <input
                       type='image'
                       src={`${baseURL}broom.png`}
 
-                      className={'cart'}
+                      className={'navigation-cart'}
                     />
                 </div>
             <SearchModal
@@ -185,7 +183,7 @@ class Search extends Component {
                 onHoverSubmit={this.onHoverSubmit.bind(this)}
               />
           </header>
-          </Router>
+       
           );
       }
 
