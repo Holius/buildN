@@ -69,7 +69,7 @@
 
 .navigation-searchBarButton {
     display: grid;
-    grid-template-columns: 1fr 6fr  1fr f0.5fr;
+    grid-template-columns: 1fr 6fr  1fr 0.5fr;
     grid-auto-rows: 65px;
 }
 
