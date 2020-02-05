@@ -4,7 +4,8 @@ import axios from 'axios';
 
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 
-const baseURL = 'NavBuild-env.jc2sppyffu.us-east-1.elasticbeanstalk.com/';
+const baseURL = 'http://NavBuild-env.jc2sppyffu.us-east-1.elasticbeanstalk.com/';
+
 
 class Search extends Component {
     constructor(props) {
@@ -34,10 +35,8 @@ class Search extends Component {
   }
 
     getSearchItems () {
-      axios.get('/api/searchItems', {
-        params: {
-          id: this.state.listingId
-        },
+      axios.get('/api/searchItems'
+      , { 
         baseURL
       })
       .then( results => {
@@ -164,7 +163,7 @@ class Search extends Component {
                       <input
                         type='image'
                         className={'searchButton'}
-                        src="mg.png"
+                        src={`${baseURL}mg.png`}
                         onClick={this.onSubmit.bind(this, event)}
                       >
                         </input>
@@ -173,8 +172,9 @@ class Search extends Component {
                     <h4 className={'signIn'}>Sign in</h4>
                     <input
                       type='image'
+                      src={`${baseURL}broom.png`}
+
                       className={'cart'}
-                      src="broom.png"
                     />
                 </div>
             <SearchModal

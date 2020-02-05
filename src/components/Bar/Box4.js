@@ -1,12 +1,15 @@
 import React from 'react'
 
 function Box4 (props) {
+
+    const baseURL = 'http://NavBuild-env.jc2sppyffu.us-east-1.elasticbeanstalk.com/';
+
     return (
         
 <div className={'box4'}>
 <figure className={'modalFigure'}>
     <img 
-        src={props.data}
+        src={`${baseURL}${props.data}`}
         className={'modalImage'}
     />
     <figcaption>Professor's Picks <br/> 
