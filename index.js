@@ -4,16 +4,16 @@ var path = require('path');
 var port = 3000;
 const bodyParser = require('body-parser');
 var mysql = require('mysql');
-///////////////////////////////////////////////
-//database
-// var connection = mysql.createConnection({
-//   host     : 'localhost',
-//   user     : 'root',
-//   password : 'password',
-//   database : 'searchbar'
-// });
 
-// connection.connect();
+//database
+var connection = mysql.createConnection({
+  host     : 'database-1.cqdyyjncctls.us-east-1.rds.amazonaws.com',
+  user     : 'root',
+  password : 'turnpassword',
+  database : 'searchbar'
+});
+
+connection.connect();
 
 //middleware
 app.use(express.static(path.join(__dirname, './dist')))
