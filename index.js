@@ -1,9 +1,10 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var port = 3000;
+var port = 3002;
 const bodyParser = require('body-parser');
 var mysql = require('mysql');
+const cors = require('cors');
 
 //database
 var connection = mysql.createConnection({
@@ -16,6 +17,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 //middleware
+app.use(cors())
 app.use(express.static(path.join(__dirname, './dist')))
 app.use(express.static('public'))
 app.use(bodyParser.json());
