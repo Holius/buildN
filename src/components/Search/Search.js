@@ -4,6 +4,8 @@ import axios from 'axios';
 
 import {BrowserRouter as Router, Link} from 'react-router-dom';
 
+const baseURL = 'NavBuild-env.jc2sppyffu.us-east-1.elasticbeanstalk.com/';
+
 class Search extends Component {
     constructor(props) {
         super(props);
@@ -32,7 +34,12 @@ class Search extends Component {
   }
 
     getSearchItems () {
-      axios.get('/api/searchItems')
+      axios.get('/api/searchItems', {
+        params: {
+          id: this.state.listingId
+        },
+        baseURL
+      })
       .then( results => {
          this.setState({ array: results.data})
       }).then ( results => {
