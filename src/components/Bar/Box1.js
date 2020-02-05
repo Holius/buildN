@@ -26,7 +26,7 @@ function Box1 (props) {
         <div className={'navigation-box1'}> 
            <div className={'navigation-headerRow'}>
                <h4>{data.header} 
-                    <span><img src={"rightArrow.png"}/></span>
+                    <span><img src={`${baseURL}rightArrow.png`}/></span>
                 </h4>
             </div>
             <table className={'navigation-tableNav'}>
